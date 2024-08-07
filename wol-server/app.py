@@ -8,9 +8,7 @@ import wakeonlan
 
 @get("/")
 async def index() -> Template:
-    print("Test1")
     wakeonlan.send_magic_packet('08:BF:B8:12:EE:CE')
-    print("Test2")
     return Template(template_name="index.html.jinja2")
 
 template_config = TemplateConfig(directory=Path("templates"), engine=JinjaTemplateEngine)
